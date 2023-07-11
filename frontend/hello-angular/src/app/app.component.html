@@ -2,4 +2,5 @@
 <h2>{{ subheading }}</h2>
 <app-user [name]="rootName" (nameChanged)="onNameChanged($event)"></app-user>
 <app-dashoard></app-dashoard>
+<app-cart [items]="rootItems" (itemAdded)="onItemWasAdded($event)"></app-cart>
 <router-outlet></router-outlet>

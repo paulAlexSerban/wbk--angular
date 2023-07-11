@@ -20,4 +20,11 @@ export class AppComponent {
   onNameChanged(newName: string) {
     this.rootName = newName;
   }
+
+  rootItems: Array<string> = ['Apples', 'Bananas', 'Cherries'];
+
+  onItemWasAdded(newItem: string) {
+    this.rootItems.push(newItem);
+    console.log(this.rootItems)
+  }
 }
