@@ -1,1 +1,1 @@
-# JS-Guess-My-Number-App
+# Angular SPA (Template)
