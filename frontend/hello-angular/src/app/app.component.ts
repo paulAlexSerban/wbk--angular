@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
  * @param styleUrls — the relative path or absolute URL of a style file(s) for an Angular component.
  */
 @Component({
-  selector: 'angular-spa-root',
+  selector: 'hello-angular-app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
@@ -15,4 +15,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title: string = 'angualr-spa';
   subheading: string = 'This is a subheading';
+  rootName: string = 'John Doe';
+
+  onNameChanged(newName: string) {
+    this.rootName = newName;
+  }
 }

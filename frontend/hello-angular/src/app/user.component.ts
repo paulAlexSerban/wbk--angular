@@ -1,31 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'angular-spa-user',
-  // inline template
+  selector: 'app-user',
   template: `
-    <input
-      type="text"
-      name="name"
-      id="name"
-      (input)="onUserInput($event)"
-      [(ngModel)]="name"
-    />
-    <h1>User {{ name }}</h1>
-    <p>This is the user component</p>
-  `,
-  // inline styles
-  styles: [
-    `
-      h1 {
-        color: blue;
-      }
-    `,
-  ],
+    <input type="text" (input)="onUserInput($event)" [value]="name">
+    <!-- <input type="text" [(ngModel)]="name"> -->
+    <p>Hello {{ name }}!</p>
+    <p>I'm the user component</p>
+  `
 })
 export class UserComponent {
-  name: string = 'John Doe';
+  @Input() name: any;
+  @Output() nameChanged = new EventEmitter<string>();
+
   onUserInput(event: any) {
-    this.name = event.target.value;
+    // this.name = event.target.value;
+    this.nameChanged.emit(event.target.value);
   }
 }
