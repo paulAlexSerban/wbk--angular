@@ -1,1 +1,1 @@
-# Angular SPA (Template)
+# Angular Workbook
