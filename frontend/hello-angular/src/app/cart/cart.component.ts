@@ -1,4 +1,6 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
+import {random} from 'lodash';
+
 
 @Component({
   selector: 'app-cart',
@@ -9,6 +11,7 @@ export class CartComponent {
   @Input() items: string[] = [];
   @Output() itemAdded = new EventEmitter<string>();
   newItem = '';
+  randomNum = random(0, 100);
   
   onAddItem() {
     this.itemAdded.emit(this.newItem);

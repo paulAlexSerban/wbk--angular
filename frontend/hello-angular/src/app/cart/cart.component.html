@@ -1,2 +1,32 @@
-<input type="text" [(ngModel)]="newItem">
-<button (click)="onAddItem()">Add Item</button>
+<div class="mb-3">
+  <label for="exampleFormControlInput1" class="form-label">Email address</label>
+  <input
+    type="text"
+    [(ngModel)]="newItem"
+    type="email"
+    class="form-control"
+    id="exampleFormControlInput1"
+    placeholder="name@example.com"
+  />
+</div>
+<button
+  (click)="onAddItem()"
+  class="btn"
+  [ngClass]="{ 'btn-primary': newItem !== '', 'btn-default': newItem === '' }"
+>
+  Add Item {{ randomNum }}
+</button>
+<p *ngIf="newItem === ''">Please enter a value</p>
+<hr />
+<div class="mb-3">
+  <p>Your cart</p>
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let item of items; let idx = index"
+      [ngStyle]="{ backgroundColor: idx % 2 === 0 ? 'lightblue' : 'transparent' }"
+    >
+      {{ item }}
+    </li>
+  </ul>
+</div>
