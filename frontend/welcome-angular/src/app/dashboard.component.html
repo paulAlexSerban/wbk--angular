@@ -1,8 +1,10 @@
 <h1>App app-dashboard</h1>
 <div>
-  <button (click)="onSwitchState()">Switch state</button>
+  <button (click)="onSwitchState()" class="btn btn-primary">
+    Switch state
+  </button>
 </div>
 <p [textContent]="loadState"></p>
 <div>
-  <input type="text" [(ngModel)]="loadState">
+  <input type="text" [(ngModel)]="loadState" />
 </div>

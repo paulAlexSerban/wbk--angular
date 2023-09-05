@@ -1,4 +1,7 @@
 <h1>{{ title }}</h1>
+<p>{{ number }}</p>
+<button (click)="onIncrease()">increase number</button>
 <div id="app-user" [name]="rootName" (nameChanged)="onNameChanged($event)"></div>
 <div id="app-cart" [items]="rootItems" (itemAdded)="onItemWasAdded($event)"></div>
+
 <router-outlet></router-outlet>
