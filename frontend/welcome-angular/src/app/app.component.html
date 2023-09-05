@@ -1,7 +1,38 @@
-<h1>{{ title }}</h1>
-<p>{{ number }}</p>
-<button (click)="onIncrease()">increase number</button>
-<div id="app-user" [name]="rootName" (nameChanged)="onNameChanged($event)"></div>
-<div id="app-cart" [items]="rootItems" (itemAdded)="onItemWasAdded($event)"></div>
+<div class="container">
+  <!-- <div class="row">
+    <div class="col-xs-12">
+      <h1>{{ title }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>{{ number }}</p>
+      <button (click)="onIncrease()">increase number</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <div
+        id="app-user"
+        [name]="rootName"
+        (nameChanged)="onNameChanged($event)"
+      ></div>
+    </div>
+  </div> -->
+  <div class="row">
+    <div class="col-xs-12">
+      <div id="app-cart"
+           [items]="rootItems"
+          (itemAdded)="onItemWasAdded($event)">
+        
+        
+      </div>
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-xs-12">
+      <div id="app-dashboard"></div>
+    </div></div> -->
+</div>
 
 <router-outlet></router-outlet>
