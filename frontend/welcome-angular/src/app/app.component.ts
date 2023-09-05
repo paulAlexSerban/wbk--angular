@@ -13,8 +13,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'welcome-angular';
   rootName = 'newPaul Name root';
+  rootItems = ['Apples', 'Bananas', 'Cherries'];
 
   onNameChanged(newName: string) {
     this.rootName = newName;
   }
+
+  onItemWasAdded(newItem: string) {
+    this.rootItems.push(newItem);
+    console.log(this.rootItems);
+  }
+
 }

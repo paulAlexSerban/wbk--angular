@@ -12,6 +12,8 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
     <!-- <input type="text" [(ngModel)]="name" /> -->
     <h1>Hello {{ name }}</h1>
     <p>I am new to Angular!</p>
+    <div id="app-user-detail"></div>
+
   `,
   styleUrls: ['./user.component.scss'],
 })
