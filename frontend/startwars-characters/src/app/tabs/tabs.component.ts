@@ -1,42 +1,32 @@
 import { Component } from '@angular/core';
-
+import { StarWarsService } from '../starwars.service';
 @Component({
   selector: 'app-tabs',
   templateUrl: './tabs.component.html',
   styleUrls: ['./tabs.component.scss'],
 })
-
 export class TabsComponent {
-  characters = [
-    { name: 'Luke Skywalker', side: '' },
-    { name: 'Darth Vader', side: '' },
-    { name: 'Obi-Wan Kenobi', side: '' },
-    { name: 'Han Solo', side: '' },
-    { name: 'Leia Organa', side: ''},
-    { name: 'Yoda', side: '' },
-    { name: 'R2-D2', side: '' },
-    { name: 'C-3PO', side: '' },
-  ];
-
+  characters: any = [];
   chosenList = 'all';
+  swService: StarWarsService;
+
+  constructor(swService: StarWarsService) {
+    this.swService = swService;
+  }
 
   onChoose(side: string) {
     this.chosenList = side;
   }
 
   getCharacters() {
-    if (this.chosenList === 'all') {
-      return this.characters.slice();
-    }
-    return this.characters.filter((char) => {
-      return char.side === this.chosenList;
-    })
+    this.characters = this.swService.getCharacters(this.chosenList);
+    return this.characters;
   }
 
-  onSideChosen(charInfo: { name: string; side: string; }) {
-    const pos = this.characters.findIndex((char) => {
+  onSideChosen(charInfo: { name: string; side: string }) {
+    const pos = this.characters.findIndex((char: any) => {
       return char.name === charInfo.name;
-    })
+    });
     this.characters[pos].side = charInfo.side;
   }
 }
