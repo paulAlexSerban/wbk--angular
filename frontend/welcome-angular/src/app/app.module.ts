@@ -14,6 +14,6 @@ import { DashboardComponent } from './dashboard.component';
   declarations: [AppComponent, UserComponent, DashboardComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent, UserComponent, DashboardComponent],
+  bootstrap: [AppComponent, DashboardComponent],
 })
 export class AppModule {}
